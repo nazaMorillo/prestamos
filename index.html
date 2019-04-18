@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="icon" type="image/png" href="img/1.png"/>
+	<title>Prestamos Expres!</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	<style type="text/css">
+	
+
+	</style>	
+</head>
+<body>
+	<section id="solicitante">
+		<h1>Prestamos Expres!</h1>
+		<h3>Completa el siguiente formulario</h3>		
+		<form method="post" id="formu" name="formu" >
+			<input class="campos" type="text" value="" id="nombre" placeholder="Ingrese nombre"  required=" required">
+
+			<input class="campos" type="text" value="" id="apellido" placeholder="Ingrese apellido"  required=" required">
+
+			<input class="campos" type="number" value="" id="dni" placeholder="Ingrese dni"  required=" required">
+
+			<input class="campos" type="date" value="" id="fNac" placeholder="Ingrese fecha de nacimiento"  required=" required">
+
+			<input class="campos" type="number" value="" id="sueldo" placeholder="Ingrese sueldo"  required=" required">
+
+			<input class="btn" type="button" id="btn" value="Validar" >
+			<input class="btn" type="reset" id="btnReset" value="Borrar" >
+		</form>		
+	</section>
+	<section id="solicitud">
+		<h1>Solicitante del prestamo</h1>
+		<form>
+			<div id="datos"></div>
+			
+			<input class="campos" type="number" value="" id="prestamo" placeholder="Ingrese monto a  solicitar">
+
+			<select class="campos" id="opciones" required="required">		
+			  <option value="" disabled selected >Seleccione número de cuotas</option>
+			  <option value="3">3 cuotas - interes de 8%</option>
+			  <option value="6">6 cuotas - interes de 16%</option>
+			  <option value="9">9 cuotas - interes de 24%</option>
+			  <option value="12">12 cuotas - interes de 32%</option>
+			  <option value="18">18 cuotas - interes de  48%</option>
+			  <option value="24">24 cuotas - interes de 62%</option>			  
+			</select>
+			<!-- <input class="btn" type="button" id="btnPrestamo" value="Solicitar prestamo" > -->
+			<h1 id="cuota"></h1>
+
+			<input class="btn" type="button" id="btnAceptar" value="Aceptar" >
+			<input class="btn" type="reset" id="btnCancelar" value="Cancelar" >			
+		</form>
+	</section>
+<script src="js/manejoForm.js"></script>
+</body>
+</html>
