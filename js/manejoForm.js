@@ -2,6 +2,9 @@
 	let limiteEdad=21;
 	let limiteSueldo=16000;
 	$('#solicitud').hide();
+	$('#solicitante').hide();
+	$('#solicitante').fadeIn(2000);
+
 
 
 	function superaLimite(presta, sueld){
