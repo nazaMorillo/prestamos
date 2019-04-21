@@ -3,7 +3,7 @@
 	let limiteSueldo=16000;
 	$('#solicitud').hide();
 	$('#solicitante').hide();
-	$('#solicitante').fadeIn(2000);
+	$('#solicitante').fadeIn(1500);
 
 
 
@@ -74,8 +74,8 @@
 		}else if(sueld<limiteSueldo){
 			alert("No es posible que accedas al prestamo \nDebes tener un sueldo mayor a $16000");				
 		}else{
-			$('#solicitante').hide(1500);
-			$('#solicitud').fadeIn(2000);
+			$('#solicitante').hide(500);
+			$('#solicitud').show(500);
 			document.getElementById("datos").innerHTML="<h2>"+nomb+" "+ape+"</h2><h3>dni: "+dni+"</h3>";						
 			let btnPrestamo= document.getElementById("btnPrestamo");
 			let seleccion = document.getElementById('opciones');
