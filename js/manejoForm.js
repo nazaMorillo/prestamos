@@ -53,8 +53,12 @@ class UI{
 		mostrarPersona.parentNode.appendChild(element);		
 		$solicitante.hide(1000);
 		
-	}
+	}	
+	
+}
 
+// Control de validaciones
+class Control{
 	superaLimite(presta, sueld){
 		if(presta >sueld*3){
 			return true;
@@ -143,15 +147,15 @@ class UI{
 		}else if(sueld<limiteSueldo){
 			alert("No es posible que accedas al prestamo \nDebes tener un sueldo mayor a $16000");				
 		}else{			
-			this.agregarPersona(persona);						
+			ui.agregarPersona(persona);						
 			
 			let seleccion = document.getElementById('opciones');
 			seleccion.addEventListener('change',
 			  function(){
-			  	const ui = new UI;
+			  	let control = new Control;
 			    let selectedOption = parseInt(this.options[seleccion.selectedIndex].value);
 			    let presta= document.getElementById("prestamo").value;	    
-			    ui.validarPrestamo(nomb, selectedOption, presta, sueld);		    
+			    control.validarPrestamo(nomb, selectedOption, presta, sueld);		    
 			    
 			  });
 		}
@@ -162,7 +166,8 @@ class UI{
 		document.getElementById('formu').reset();
 	}
 
-	validarDatos(){			
+	validarDatos(){
+
 
 	}
 }
@@ -177,11 +182,26 @@ function traerFormulario(){
 			fechanac = document.getElementById('fNac').value;
 			sueldo = document.getElementById('sueldo').value;
 
-// Crear el objeto Persona
+/*var validator = new FormValidator('formu', [{
+    name: 'nombre',
+    display: 'required',
+    rules: 'required'
+}, {
+    name: 'apellido',
+    display: 'required',
+    rules: 'required'
+}, {
+    name: 'dni',
+    display: 'required',
+    rules: 'alpha_numeric'
+});*/
+
+// Crear el objeto Persona, UI y Control
 		const persona = new Persona(nombre, apellido, dni, fechanac, sueldo);
 		const ui = new UI;
-		//ui.agregarPersona(persona);
-		ui.validarAptitud(persona);
+		const control = new Control;
+		
+		control.validarAptitud(persona,ui);
 		//ui.resetForm();
 		e.preventDefault();
 		console.log(persona);
